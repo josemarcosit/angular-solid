@@ -1,0 +1,9 @@
+<app-header title="Products"></app-header>
+<div class="main">
+  <h1>main</h1>
+  <div class="container">
+    <div class=""><app-product-item></app-product-item></div>
+    <div class=""><app-product-list></app-product-list></div>
+  </div>
+</div>
+<app-footer (productCreated)="onProductAdded($event)"></app-footer>
