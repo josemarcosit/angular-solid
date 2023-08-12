@@ -2,12 +2,12 @@ import { EventEmitter, Input, Output } from "@angular/core";
 import { Directive } from '@angular/core';
 
 @Directive()
-export class LiskovProductBaseComponent {
-   @Input() items:any = [];
+export class ItemBaseComponent {
+   @Input() products:any = [];
    @Output() itemDeleted = new EventEmitter<{ Id: number }>();
 
-   delete(index:number){
-     this.items.splice(index, 1);
+   deleteOnClick(index:number){
+     this.products.splice(index, 1);
      this.itemDeleted.emit({ Id: index });
    }
 }

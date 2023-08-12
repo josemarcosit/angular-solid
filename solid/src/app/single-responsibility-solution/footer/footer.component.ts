@@ -13,6 +13,7 @@ export class FooterComponent {
   }>();
 
   add(value: any) {
+
     let product ={
       Id: 0,
       Name: value.name,

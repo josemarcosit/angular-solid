@@ -18,6 +18,14 @@ import { LiskovProductItemComponent } from './liskov-substitution-problem/liskov
 import { LiskovProductListComponent } from './liskov-substitution-problem/liskov-product-list/liskov-product-list.component';
 import { LiskovSolutionComponent } from './liskov-substitution-solution/liskov-solution/liskov-solution.component';
 import { LiskovProductListSolutionComponent } from './liskov-substitution-solution/liskov-product-list-solution/liskov-product-list-solution.component';
+import { InterfaceSegregationComponent } from './interface-segregation-problem/interface-segregation/interface-segregation.component';
+import { InterfaceProductItemComponent } from './interface-segregation-problem/interface-product-item/interface-product-item.component';
+import { InterfaceProductListComponent } from './interface-segregation-problem/interface-product-list/interface-product-list.component';
+import { InterfaceSegregationSolutionComponent } from './interface-segregation-solution/interface-segregation-solution/interface-segregation-solution.component';
+import { InterfaceProductItemSolutionComponent } from './interface-segregation-solution/interface-product-item-solution/interface-product-item-solution.component';
+import { InterfaceProductListSolutionComponent } from './interface-segregation-solution/interface-product-list-solution/interface-product-list-solution.component';
+import { DependencyProductItemComponent } from './dependency-inversion-problem/dependency-product-item/dependency-product-item.component';
+import { DependencyInversionComponent } from './dependency-inversion-problem/dependency-inversion/dependency-inversion.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +44,15 @@ import { LiskovProductListSolutionComponent } from './liskov-substitution-soluti
     LiskovProductItemComponent,
     LiskovProductListComponent,
     LiskovSolutionComponent,
-    LiskovProductListSolutionComponent
+    LiskovProductListSolutionComponent,
+    InterfaceSegregationComponent,
+    InterfaceProductItemComponent,
+    InterfaceProductListComponent,
+    InterfaceSegregationSolutionComponent,
+    InterfaceProductItemSolutionComponent,
+    InterfaceProductListSolutionComponent,
+    DependencyProductItemComponent,
+    DependencyInversionComponent
   ],
   imports: [
     BrowserModule,
