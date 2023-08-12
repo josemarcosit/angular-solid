@@ -9,6 +9,8 @@ import { LiskovSolutionComponent } from './liskov-substitution-solution/liskov-s
 import { InterfaceSegregationComponent } from './interface-segregation-problem/interface-segregation/interface-segregation.component';
 import { InterfaceSegregationSolutionComponent } from './interface-segregation-solution/interface-segregation-solution/interface-segregation-solution.component';
 import { DependencyInversionComponent } from './dependency-inversion-problem/dependency-inversion/dependency-inversion.component';
+import { DependencyInversionSolutionComponent } from './dependency-inversion-solution/dependency-inversion-solution/dependency-inversion-solution.component';
+import { FullAppComponent } from './app-full-solution/full-app/full-app.component';
 
 const routes: Routes = [
   { path: 'single-responsibility-problem', component: ComponentComponent },
@@ -20,7 +22,8 @@ const routes: Routes = [
   { path: 'interface-segregation-problem', component: InterfaceSegregationComponent },
   { path: 'interface-segregation-solution', component: InterfaceSegregationSolutionComponent },
   { path: 'dependency-inversion-problem', component: DependencyInversionComponent },
-  { path: 'dependency-inversion-solution', component: DependencyInversionComponent },
+  { path: 'dependency-inversion-solution', component: DependencyInversionSolutionComponent },
+  { path: 'app-full-solution', component: FullAppComponent },
 ];
 
 @NgModule({

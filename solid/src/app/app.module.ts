@@ -26,6 +26,14 @@ import { InterfaceProductItemSolutionComponent } from './interface-segregation-s
 import { InterfaceProductListSolutionComponent } from './interface-segregation-solution/interface-product-list-solution/interface-product-list-solution.component';
 import { DependencyProductItemComponent } from './dependency-inversion-problem/dependency-product-item/dependency-product-item.component';
 import { DependencyInversionComponent } from './dependency-inversion-problem/dependency-inversion/dependency-inversion.component';
+import { DependencyInversionSolutionComponent } from './dependency-inversion-solution/dependency-inversion-solution/dependency-inversion-solution.component';
+import { LoggerSolutionService } from './dependency-inversion-solution/logger-solution.service';
+import { DependencyProductItemSolutionComponent } from './dependency-inversion-solution/dependency-product-item-solution/dependency-product-item-solution.component';
+import { LoggerModule, NgxLoggerLevel } from 'ngx-logger';
+import { FullAppComponent } from './app-full-solution/full-app/full-app.component';
+import { ContentComponent } from './app-full-solution/content/content.component';
+import { ContentSectionItemComponent } from './app-full-solution/content-section-item/content-section-item.component';
+import { ContentSectionListComponent } from './app-full-solution/content-section-list/content-section-list.component';
 
 @NgModule({
   declarations: [
@@ -52,14 +60,28 @@ import { DependencyInversionComponent } from './dependency-inversion-problem/dep
     InterfaceProductItemSolutionComponent,
     InterfaceProductListSolutionComponent,
     DependencyProductItemComponent,
-    DependencyInversionComponent
+    DependencyInversionComponent,
+    DependencyInversionSolutionComponent,
+    DependencyProductItemSolutionComponent,
+    FullAppComponent,
+    ContentComponent,
+    ContentSectionItemComponent,
+    ContentSectionListComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    LoggerModule.forRoot({
+      level: NgxLoggerLevel['INFO'],
+      serverLogLevel: NgxLoggerLevel['INFO']
+    } as any),
   ],
-  providers: [],
+  providers: [
+    {
+      provide: 'Logger', useClass: LoggerSolutionService
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

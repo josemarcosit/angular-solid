@@ -1,0 +1,9 @@
+<app-header title="Dependency Inversion Solution"></app-header>
+<div class="main">
+  <h1>main</h1>
+  <div class="container">
+    <div class=""><app-dependency-product-item-solution (itemDeleted)="onDeleted($event)"></app-dependency-product-item-solution></div>
+  </div>
+</div>
+<app-footer (productCreated)="onProductAdded($event)"></app-footer>
+
