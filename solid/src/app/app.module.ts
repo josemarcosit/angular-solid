@@ -13,6 +13,11 @@ import { OpenCloseComponent } from './open-close-problem/open-close/open-close.c
 import { OpenCloseSolutionComponent } from './open-close-solution/open-close-solution/open-close-solution.component';
 import { ProductItemComponent } from './open-close-solution/product-item/product-item.component';
 import { ProductListComponent } from './open-close-solution/product-list/product-list.component';
+import { LiskovComponent } from './liskov-substitution-problem/liskov/liskov.component';
+import { LiskovProductItemComponent } from './liskov-substitution-problem/liskov-product-item/liskov-product-item.component';
+import { LiskovProductListComponent } from './liskov-substitution-problem/liskov-product-list/liskov-product-list.component';
+import { LiskovSolutionComponent } from './liskov-substitution-solution/liskov-solution/liskov-solution.component';
+import { LiskovProductListSolutionComponent } from './liskov-substitution-solution/liskov-product-list-solution/liskov-product-list-solution.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +31,12 @@ import { ProductListComponent } from './open-close-solution/product-list/product
     OpenCloseComponent,
     OpenCloseSolutionComponent,
     ProductItemComponent,
-    ProductListComponent
+    ProductListComponent,
+    LiskovComponent,
+    LiskovProductItemComponent,
+    LiskovProductListComponent,
+    LiskovSolutionComponent,
+    LiskovProductListSolutionComponent
   ],
   imports: [
     BrowserModule,
