@@ -1,0 +1,22 @@
+<h1>footer</h1>
+<div class="footer">
+  <div class="container">
+    <h3>New Product:</h3>
+    <form #loginForm="ngForm" (ngSubmit)="add(loginForm.value)">
+      <div class="mb-3">
+        <input name="name" ngModel placeholder="Name" id="name" type="text" />
+      </div>
+      <div class="mb-3">
+        <input
+          name="price"
+          ngModel
+          placeholder="Price"
+          id="price"
+          type="text"
+        />
+      </div>
+      <button>Add</button>
+    </form>
+  </div>
+</div>
+
