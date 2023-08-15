@@ -1,30 +1,28 @@
 ## How to apply SOLID Principles in Angular 
 
-According to oficial website, Angular is an application-design framework and development platform for creating efficient and sophisticated single-page apps. 
-
-And SOLID are five design principles that can make software design more understandable, flexible, and maintainable. They could be used in any OOP language. - [Wikipedia](https://en.wikipedia.org/wiki/SOLID)
+According to oficial website, Angular is an application-design framework and development platform for creating efficient and sophisticated single-page apps. And SOLID are five design principles that can make software design more understandable, flexible, maintainable, and can be used in any OOP language. - [Wikipedia](https://en.wikipedia.org/wiki/SOLID)
 
 
 Although Angular is not a language, it uses object-oriented programming (OOP) and those principles can be used to improve code structure, reusability, and maintainability of the apps builded with the framework .
   
-First, let's review these principals:
+First, let's review these principles:
 
-- S - Single Responsibility Principle: A class should have only one responsibility, and should be only one reason to change it. This principle can also be applicable to components, methods, etc...
+Single Responsibility Principle (SRP): A class should have only one responsibility, and there should be only one reason to change it. In Angular, this principle can also be applied to components, directives, pipes, services, or anything else.
 
-- O - Open-Closed Principle (OCP): A class/component/methods should be open for extension, but closed for modification.
+Open-Closed Principle (OCP): A component should be open for extension, but closed for modification. This means that the component should be able to be extended with new functionality without having to change the existing code.
 
-- L - Liskov Substitution Principle: Derived classes should be substitutable for their base classes.
+Liskov Substitution Principle (LSP): A subclass should be able to replace its base class without breaking the program. This means that the subclass should behave in the same way as the base class in all cases.
 
-- I - Interface Segregation Principle: Clients should not be forced to depend on interfaces they do not use.
+Interface Segregation Principle (ISP): No client should be forced to depend on methods it does not use. This means that interfaces should be designed to be as specific as possible, so that clients only have to depend on the methods that they need.
 
-- D - Dependency Inversion Principle: A class should depend upon abstraction (interface and abstract class), not concretions.
+Dependency Inversion Principle (DIP): Depend upon abstractions, not concretions. This means that components should depend on interfaces, not on specific implementations of those interfaces. This makes it easier to change the implementation of an interface without having to change the code that depends on it.
 
-Now, let's see how they are applied into a app.
+Now, let's see how this can be applied to an app.
 ___________________________________________________________________________________________________________________________________________
 
-(SRP) - Single Responsibility Principle:
+- Single Responsibility Principle (SRP):
 
-Problem: app.component has too many responsabilities. The header, main, and footer html elements were implemented in the same component. 
+Problem: app.component has too many responsabilities. The header, main, and footer HTML elements were implemented in the same component. 
 
 ![Problem](/solid/src/assets/imgs/single-responsibility-problem.png)
 
@@ -41,7 +39,7 @@ Problem: app.component has too many responsabilities. The header, main, and foot
 </footer>
 ```
 
-Solution: Create new components and move their specific responsabilities to them (html/classes/methods).
+Solution: Split app component into multiple components and implement their specific responsabilities.
 
 ```
 [app.component]
@@ -56,9 +54,9 @@ class FooterComponent {...}
 
 ![Solution](/solid/src/assets/imgs/single-responsibility-solution.png)
 
-(OCP) - Open Closed Principle:
+- Open Closed Principle (OCP):
 
-Problem: The main component contains elements of the product item. In the future, if we need to implement a new feature that makes a product item have no button, we need to modify the main control, and this can introduce bugs.
+Problem: The main component contains HTML elements that are especific to product item component. In the future, if we need to implement a new feature that makes a product item component have no button, we will need to modify the main component and this can introduce bugs.
 
 ![Problem](/solid/src/assets/imgs/open-closed-problem.png)
 
@@ -76,7 +74,7 @@ Problem: The main component contains elements of the product item. In the future
   </div>
 ```
 
-Solution: Create a new component with HTML specific elements of products and use it in the main component.
+Solution: Create a new component with HTML elements that are especific to product item and use it in the main component.
 
 ![Solution](/solid/src/assets/imgs/open-closed-solution.png)
 
@@ -90,10 +88,10 @@ Solution: Create a new component with HTML specific elements of products and use
   </div>
 </div>
 ```
+ 
+- Liskov Substitution Principle (LSP):
 
-L - Liskov Substitution Principle:
-
-Problem: class ProductListComponent extends ItemBaseComponent, but not support deleteOnClick event.
+Problem: class ProductListComponent extends ItemBaseComponent, but not support deleteOnClick method.
 
 ![Problem](/solid/src/assets/imgs/liskov-substitution-problem.png)
 
@@ -143,7 +141,7 @@ extends ListBaseComponent {...}
 </div>
 ```
 
-ISP - Interface Segregation Principle:
+- Interface Segregation Principle (ISP):
 
 Problem: Products interface contains method that forces ProductListComponent to have a method that is not supported.
 
@@ -169,7 +167,7 @@ extends ItemBaseComponent
 implements Products
 {
     override products: Product[] = [];
-    override deleteOnClick(index: number); //dummy implementation
+    override deleteOnClick(index: number); //this method is not supported 
 }
 ```
 
@@ -205,9 +203,9 @@ implements Products
 }
 ```
 
-(DIP) - Dependency Inversion Principle:
+- Dependency Inversion Principle (DIP):
 
-Problem: Customer class uses a external component(NGXLogger) to log messages. If the component breaks, the app can stop working.
+Problem: LoggerService class uses a external component(NGXLogger) to log messages. If the component breaks, the app can stop working.
 
 ![Problem](/solid/src/assets/imgs/dependency-inversion-problem.png)
 
