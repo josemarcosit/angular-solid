@@ -212,15 +212,15 @@ Problem: LoggerService class uses a external component(NGXLogger) to log message
 ```
 class ProductItemComponent
 extends ItemBaseComponent
-implements Products, Deletable {
-  override products: Product[] = [];
-  constructor(...,private loggerService: LoggerService) {...}
-  override deleteOnClick(index: number) {    
-    this.loggerService.info('Product has been deleted.');
-  }
+implements Products, Deletable
+{
+  override products: Product[] = [];    
+  constructor(...,private loggerService: LoggerService) {...}  
+  override deleteOnClick(index: number) { this.loggerService.info('Product has been deleted.'); }
+}
 ```
 
-Solution: Create a interface Logger and make LoggerService implement it. In the angular providers, cofigure the dependency.
+Solution: Create a interface Logger and make LoggerService implement it. In the angular providers, configure the dependency.
 
 ![Solution](/solid/src/assets/imgs/dependency-inversion-solution.png)
 
@@ -235,29 +235,21 @@ class LoggerService
 implements Logger
 {
   constructor(private logger: NGXLogger) {...}
-
-  info(message: string) {
-    this.logger.info(message);
-  }
-
+  info(message: string) { this.logger.info(message); }
   ...
 }
+
 [angular.json]
-providers: [
-    {
-      provide: 'Logger', useClass: LoggerService
-    }
-  ]
+providers: [{ provide: 'Logger', useClass: LoggerService }]
 
 export class ProductItemComponent
 extends ItemBaseComponent
 implements Products, Deletable
 {
   override products: Product[] = [];
-
   constructor(...,@Inject('Logger') public logger: Logger) {...}
-
-  override deleteOnClick(index: number) {
+  override deleteOnClick(index: number) 
+  { 
     super.deleteOnClick(index);
     this.logger.info('Product has been deleted.');
   }
@@ -289,7 +281,6 @@ implements Products, Deletable
 {
   override products: Product[] = [];
   constructor(...,@Inject('Logger') public logger: Logger {...}  
-
   override deleteOnClick(index: number) {...}
 }
 
