@@ -1,3 +1,3 @@
 export interface DeletableSolution{
-  deleteOnClick(index: number);
+  deleteOnClick(index: number): void;
 }
