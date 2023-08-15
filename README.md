@@ -41,6 +41,8 @@ Problem: app.component has too many responsabilities. The header, main, and foot
 
 Solution: Split app component into multiple components and implement their specific responsabilities.
 
+![Solution](/solid/src/assets/imgs/single-responsibility-solution.png)
+
 ```
 [app.component]
 <app-header></app-header>
@@ -51,8 +53,6 @@ class HeaderComponent {...}
 class MainComponent {...}
 class FooterComponent {...}
 ```
-
-![Solution](/solid/src/assets/imgs/single-responsibility-solution.png)
 
 - Open Closed Principle (OCP):
 
