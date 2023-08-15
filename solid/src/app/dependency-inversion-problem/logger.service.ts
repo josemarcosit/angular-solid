@@ -7,13 +7,13 @@ export class LoggerService {
 
   constructor() { }
 
-  info(message: string): void {
+  info(message: string) {
     console.info(message);
   }
-  warning(warning: string): void {
+  warning(warning: string) {
     console.warn(warning);
   }
-  error(error: string): void {
+  error(error: string) {
     console.error(error);
   }
 }

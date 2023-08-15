@@ -17,7 +17,7 @@ implements ProductsSolution {
     super();
   }
 
-  ngOnInit(): void {
+  ngOnInit() {
    this.products = this.productService.getProducts();
   }
 }

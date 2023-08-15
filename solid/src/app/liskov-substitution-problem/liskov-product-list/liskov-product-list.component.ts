@@ -13,7 +13,7 @@ export class LiskovProductListComponent extends ItemBaseComponent {
     super();
   }
 
-  ngOnInit(): void {
+  ngOnInit() {
    super.products = this.productService.getProducts();
   }
 }

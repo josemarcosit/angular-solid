@@ -18,11 +18,11 @@ implements Products {
     super();
   }
 
-  ngOnInit(): void {
+  ngOnInit() {
     this.products = this.productService.getProducts();
   }
 
-  override deleteOnClick(index: number): void {
+  override deleteOnClick(index: number) {
     super.deleteOnClick(index);
     console.log('Product has been deleted.');
   }

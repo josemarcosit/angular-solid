@@ -9,13 +9,13 @@ export class LoggerSolutionService implements Logger {
 
   constructor(private logger: NGXLogger) { }
 
-  info(message: string): void {
+  info(message: string) {
     this.logger.info(message);
   }
-  warning(warning: string): void {
+  warning(warning: string) {
     this.logger.warn(warning);
   }
-  error(error: string): void {
+  error(error: string) {
     this.logger.error(error);
   }
 }

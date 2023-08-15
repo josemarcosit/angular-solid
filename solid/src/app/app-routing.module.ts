@@ -13,6 +13,7 @@ import { DependencyInversionSolutionComponent } from './dependency-inversion-sol
 import { FullAppComponent } from './app-full-solution/full-app/full-app.component';
 
 const routes: Routes = [
+  { path: '', component: FullAppComponent },
   { path: 'single-responsibility-problem', component: ComponentComponent },
   { path: 'single-responsibility-solution', component: SolutionComponent },
   { path: 'open-close-problem', component: OpenCloseComponent },

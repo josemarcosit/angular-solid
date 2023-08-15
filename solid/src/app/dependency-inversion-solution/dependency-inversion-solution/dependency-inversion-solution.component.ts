@@ -12,7 +12,7 @@ export class DependencyInversionSolutionComponent {
 
   constructor(@Inject('Logger') public logger: Logger, private productService: ProductService) {
   }
-  ngOnInit(): void {
+  ngOnInit() {
    this.products = this.productService.getProducts();
   }
 

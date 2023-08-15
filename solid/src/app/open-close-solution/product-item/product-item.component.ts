@@ -11,7 +11,7 @@ export class ProductItemComponent {
 
   constructor(private productService: ProductService) {
   }
-  ngOnInit(): void {
+  ngOnInit() {
    this.products = this.productService.getProducts();
   }
   delete(index:number){

@@ -9,15 +9,14 @@ import { ProductService } from 'src/app/single-responsibility-solution/product.s
   templateUrl: './interface-product-list-solution.component.html',
   styleUrls: ['./interface-product-list-solution.component.scss']
 })
-export class InterfaceProductListSolutionComponent extends ItemBaseComponent
+export class InterfaceProductListSolutionComponent
 implements ProductsSolution {
-  override products: Product[] = [];
+  products: Product[] = [];
 
   constructor(private productService: ProductService) {
-    super();
   }
 
-  ngOnInit(): void {
+  ngOnInit() {
    this.products = this.productService.getProducts();
   }
 }
