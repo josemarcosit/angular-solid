@@ -1,11 +1,11 @@
-## How to apply SOLID Principles in Angular 
+##How to apply SOLID Principles in Angular 
 
 According to oficial website, Angular is an application-design framework and development platform for creating efficient and sophisticated single-page apps. And SOLID are five design principles that can make software design more understandable, flexible, maintainable, and can be used in any OOP language. - [Wikipedia](https://en.wikipedia.org/wiki/SOLID)
 
 
-Although Angular is not a language, it uses object-oriented programming (OOP) and those principles can be used to improve code structure, reusability, and maintainability of the apps builded with the framework .
+Although Angular is not a language, it uses object-oriented programming (OOP) and those principles can be used to improve code structure, reusability, and maintainability of the apps builded with the framework.
   
-First, let's review these principles:
+The five principles are:
 
 Single Responsibility Principle (SRP): A class should have only one responsibility, and there should be only one reason to change it. In Angular, this principle can also be applied to components, directives, pipes, services, or anything else.
 
@@ -17,8 +17,7 @@ Interface Segregation Principle (ISP): No client should be forced to depend on m
 
 Dependency Inversion Principle (DIP): Depend upon abstractions, not concretions. This means that components should depend on interfaces, not on specific implementations of those interfaces. This makes it easier to change the implementation of an interface without having to change the code that depends on it.
 
-Now, let's see how this can be applied to an app.
-___________________________________________________________________________________________________________________________________________
+How they can be applied: ____________________________________________________________________________________________________________________________
 
 - Single Responsibility Principle (SRP):
 
