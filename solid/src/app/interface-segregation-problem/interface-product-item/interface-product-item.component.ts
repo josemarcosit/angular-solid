@@ -7,11 +7,12 @@ import { ProductService } from 'src/app/single-responsibility-solution/product.s
 @Component({
   selector: 'app-interface-product-item',
   templateUrl: './interface-product-item.component.html',
-  styleUrls: ['./interface-product-item.component.scss']
+  styleUrls: ['./interface-product-item.component.scss'],
 })
 export class InterfaceProductItemComponent
-extends ItemBaseComponent
-implements Products {
+  extends ItemBaseComponent
+  implements Products
+{
   override products: Product[] = [];
 
   constructor(private productService: ProductService) {

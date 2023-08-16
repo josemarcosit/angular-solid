@@ -4,17 +4,16 @@ import { ProductService } from 'src/app/single-responsibility-solution/product.s
 @Component({
   selector: 'app-product-item',
   templateUrl: './product-item.component.html',
-  styleUrls: ['./product-item.component.scss']
+  styleUrls: ['./product-item.component.scss'],
 })
 export class ProductItemComponent {
-  @Input() products:any = [];
+  @Input() products: any = [];
 
-  constructor(private productService: ProductService) {
-  }
+  constructor(private productService: ProductService) {}
   ngOnInit() {
-   this.products = this.productService.getProducts();
+    this.products = this.productService.getProducts();
   }
-  delete(index:number){
+  delete(index: number) {
     this.products.splice(index, 1);
   }
 }

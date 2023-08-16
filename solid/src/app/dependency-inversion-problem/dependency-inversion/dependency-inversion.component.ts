@@ -4,24 +4,21 @@ import { ProductService } from 'src/app/single-responsibility-solution/product.s
 @Component({
   selector: 'app-dependency-inversion',
   templateUrl: './dependency-inversion.component.html',
-  styleUrls: ['./dependency-inversion.component.scss']
+  styleUrls: ['./dependency-inversion.component.scss'],
 })
 export class DependencyInversionComponent {
-  products:any = [];
+  products: any = [];
 
-  constructor(private productService: ProductService) {
-  }
+  constructor(private productService: ProductService) {}
   ngOnInit() {
-   this.products = this.productService.getProducts();
+    this.products = this.productService.getProducts();
   }
 
-  onProductAdded(product:any){
+  onProductAdded(product: any) {
     this.productService.add(product);
   }
 
-  onDeleted(value:any){
+  onDeleted(value: any) {
     console.log(value);
   }
 }
-
-

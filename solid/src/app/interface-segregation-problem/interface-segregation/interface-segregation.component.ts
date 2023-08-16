@@ -4,22 +4,21 @@ import { ProductService } from 'src/app/single-responsibility-solution/product.s
 @Component({
   selector: 'app-interface-segregation',
   templateUrl: './interface-segregation.component.html',
-  styleUrls: ['./interface-segregation.component.scss']
+  styleUrls: ['./interface-segregation.component.scss'],
 })
 export class InterfaceSegregationComponent {
-  products:any = [];
+  products: any = [];
 
-  constructor(private productService: ProductService) {
-  }
+  constructor(private productService: ProductService) {}
   ngOnInit() {
-   this.products = this.productService.getProducts();
+    this.products = this.productService.getProducts();
   }
 
-  onProductAdded(product:any){
+  onProductAdded(product: any) {
     this.productService.add(product);
   }
 
-  onDeleted(value:any){
+  onDeleted(value: any) {
     console.log(value);
   }
 }

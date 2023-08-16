@@ -4,14 +4,13 @@ import { ProductService } from 'src/app/single-responsibility-solution/product.s
 @Component({
   selector: 'app-product-list',
   templateUrl: './product-list.component.html',
-  styleUrls: ['./product-list.component.scss']
+  styleUrls: ['./product-list.component.scss'],
 })
 export class ProductListComponent {
-  @Input() products:any = [];
+  @Input() products: any = [];
 
-  constructor(private productService: ProductService) {
-  }
+  constructor(private productService: ProductService) {}
   ngOnInit() {
-   this.products = this.productService.getProducts();
+    this.products = this.productService.getProducts();
   }
 }

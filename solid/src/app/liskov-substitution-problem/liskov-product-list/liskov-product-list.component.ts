@@ -5,16 +5,14 @@ import { ItemBaseComponent } from '../product-base';
 @Component({
   selector: 'app-liskov-product-list',
   templateUrl: './liskov-product-list.component.html',
-  styleUrls: ['./liskov-product-list.component.scss']
+  styleUrls: ['./liskov-product-list.component.scss'],
 })
 export class LiskovProductListComponent extends ItemBaseComponent {
-
   constructor(private productService: ProductService) {
     super();
   }
 
   ngOnInit() {
-   super.products = this.productService.getProducts();
+    super.products = this.productService.getProducts();
   }
 }
-

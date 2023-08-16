@@ -7,11 +7,12 @@ import { ItemBaseComponent } from 'src/app/liskov-substitution-problem/product-b
 @Component({
   selector: 'app-interface-product-list',
   templateUrl: './interface-product-list.component.html',
-  styleUrls: ['./interface-product-list.component.scss']
+  styleUrls: ['./interface-product-list.component.scss'],
 })
 export class InterfaceProductListComponent
-extends ItemBaseComponent
-implements Products {
+  extends ItemBaseComponent
+  implements Products
+{
   override products: Product[] = [];
 
   constructor(private productService: ProductService) {
@@ -19,7 +20,6 @@ implements Products {
   }
 
   ngOnInit() {
-   this.products = this.productService.getProducts();
+    this.products = this.productService.getProducts();
   }
 }
-

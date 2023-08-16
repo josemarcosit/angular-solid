@@ -9,13 +9,18 @@ import { ProductService } from 'src/app/single-responsibility-solution/product.s
 @Component({
   selector: 'app-content-section-item',
   templateUrl: './content-section-item.component.html',
-  styleUrls: ['./content-section-item.component.scss']
+  styleUrls: ['./content-section-item.component.scss'],
 })
-export class ContentSectionItemComponent  extends ItemBaseComponent
-implements ProductsSolution, DeletableSolution {
+export class ContentSectionItemComponent
+  extends ItemBaseComponent
+  implements ProductsSolution, DeletableSolution
+{
   override products: Product[] = [];
 
-  constructor(@Inject('Logger') public logger: Logger, private productService: ProductService) {
+  constructor(
+    @Inject('Logger') public logger: Logger,
+    private productService: ProductService
+  ) {
     super();
   }
 
@@ -28,6 +33,3 @@ implements ProductsSolution, DeletableSolution {
     this.logger.info('Product has been deleted.');
   }
 }
-
-
-

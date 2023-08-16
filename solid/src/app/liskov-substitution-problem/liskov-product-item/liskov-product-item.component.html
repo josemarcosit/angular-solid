@@ -1,8 +1,7 @@
 <h1>liskov-product-item</h1>
 <div class="col" *ngFor="let p of products; index as i">
-<div>{{ p.Name }}</div>
-<div>Price: {{ p.Price }}</div>
-<button class="btn btn-primary" (click)="deleteOnClick(i)">Delete</button>
-<br />
+  <div>{{ p.Name }}</div>
+  <div>Price: {{ p.Price }}</div>
+  <button class="btn btn-primary" (click)="deleteOnClick(i)">Delete</button>
+  <br />
 </div>
-

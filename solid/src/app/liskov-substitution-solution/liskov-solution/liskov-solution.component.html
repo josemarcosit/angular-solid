@@ -2,8 +2,14 @@
 <div class="main">
   <h1>main</h1>
   <div class="container">
-    <div ><app-liskov-product-item (itemDeleted)="onDeleted($event)"></app-liskov-product-item></div>
-    <div ><app-liskov-product-list-solution></app-liskov-product-list-solution></div>
+    <div>
+      <app-liskov-product-item
+        (itemDeleted)="onDeleted($event)"
+      ></app-liskov-product-item>
+    </div>
+    <div>
+      <app-liskov-product-list-solution></app-liskov-product-list-solution>
+    </div>
   </div>
 </div>
 <app-footer (productCreated)="onProductAdded($event)"></app-footer>

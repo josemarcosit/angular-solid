@@ -4,13 +4,12 @@ import { ProductService } from '../product.service';
 @Component({
   selector: 'app-solution',
   templateUrl: './solution.component.html',
-  styleUrls: ['./solution.component.scss']
+  styleUrls: ['./solution.component.scss'],
 })
 export class SolutionComponent {
-  constructor(private productService: ProductService) {
-  }
+  constructor(private productService: ProductService) {}
 
-  onProductAdded(product:any){
+  onProductAdded(product: any) {
     this.productService.add(product);
   }
 }

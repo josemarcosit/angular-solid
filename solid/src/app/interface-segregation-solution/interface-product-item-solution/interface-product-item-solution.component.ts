@@ -8,24 +8,24 @@ import { DeletableSolution } from '../interface-segregation-solution/interfaces/
 @Component({
   selector: 'app-interface-product-item-solution',
   templateUrl: './interface-product-item-solution.component.html',
-  styleUrls: ['./interface-product-item-solution.component.scss']
+  styleUrls: ['./interface-product-item-solution.component.scss'],
 })
 export class InterfaceProductItemSolutionComponent
   extends ItemBaseComponent
-  implements ProductsSolution, DeletableSolution {
-    override products: Product[] = [];
+  implements ProductsSolution, DeletableSolution
+{
+  override products: Product[] = [];
 
-    constructor(private productService: ProductService) {
-      super();
-    }
-
-    ngOnInit() {
-      this.products = this.productService.getProducts();
-    }
-
-    override deleteOnClick(index: number) {
-      super.deleteOnClick(index);
-      console.log('Product has been deleted.');
-    }
+  constructor(private productService: ProductService) {
+    super();
   }
 
+  ngOnInit() {
+    this.products = this.productService.getProducts();
+  }
+
+  override deleteOnClick(index: number) {
+    super.deleteOnClick(index);
+    console.log('Product has been deleted.');
+  }
+}

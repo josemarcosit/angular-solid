@@ -5,25 +5,24 @@ import { Logger } from '../interfaces/logger';
 @Component({
   selector: 'app-dependency-inversion-solution',
   templateUrl: './dependency-inversion-solution.component.html',
-  styleUrls: ['./dependency-inversion-solution.component.scss']
+  styleUrls: ['./dependency-inversion-solution.component.scss'],
 })
 export class DependencyInversionSolutionComponent {
-  products:any = [];
+  products: any = [];
 
-  constructor(@Inject('Logger') public logger: Logger, private productService: ProductService) {
-  }
+  constructor(
+    @Inject('Logger') public logger: Logger,
+    private productService: ProductService
+  ) {}
   ngOnInit() {
-   this.products = this.productService.getProducts();
+    this.products = this.productService.getProducts();
   }
 
-  onProductAdded(product:any){
+  onProductAdded(product: any) {
     this.productService.add(product);
   }
 
-  onDeleted(value:any){
+  onDeleted(value: any) {
     this.logger.info(value);
   }
 }
-
-
-

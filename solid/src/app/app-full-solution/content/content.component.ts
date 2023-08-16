@@ -6,26 +6,25 @@ import { ProductService } from 'src/app/single-responsibility-solution/product.s
 @Component({
   selector: 'app-content',
   templateUrl: './content.component.html',
-  styleUrls: ['./content.component.scss']
+  styleUrls: ['./content.component.scss'],
 })
 export class ContentComponent {
   products: Product[] = [];
 
-  constructor(@Inject('Logger') public logger: Logger, private productService: ProductService) {
-  }
+  constructor(
+    @Inject('Logger') public logger: Logger,
+    private productService: ProductService
+  ) {}
+
   ngOnInit() {
-   this.products = this.productService.getProducts();
+    this.products = this.productService.getProducts();
   }
 
-  onProductAdded(product:any){
+  onProductAdded(product: any) {
     this.productService.add(product);
   }
 
-  onDeleted(value:any){
+  onDeleted(value: any) {
     this.logger.info(value);
   }
 }
-
-
-
-

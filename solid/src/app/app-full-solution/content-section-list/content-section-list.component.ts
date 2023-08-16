@@ -7,10 +7,12 @@ import { ProductService } from 'src/app/single-responsibility-solution/product.s
 @Component({
   selector: 'app-content-section-list',
   templateUrl: './content-section-list.component.html',
-  styleUrls: ['./content-section-list.component.scss']
+  styleUrls: ['./content-section-list.component.scss'],
 })
-export class ContentSectionListComponent extends ItemBaseComponent
-implements ProductsSolution {
+export class ContentSectionListComponent
+  extends ItemBaseComponent
+  implements ProductsSolution
+{
   override products: Product[] = [];
 
   constructor(private productService: ProductService) {
@@ -18,7 +20,6 @@ implements ProductsSolution {
   }
 
   ngOnInit() {
-   this.products = this.productService.getProducts();
+    this.products = this.productService.getProducts();
   }
 }
-

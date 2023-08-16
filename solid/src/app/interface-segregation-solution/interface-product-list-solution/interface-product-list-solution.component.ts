@@ -7,16 +7,14 @@ import { ProductService } from 'src/app/single-responsibility-solution/product.s
 @Component({
   selector: 'app-interface-product-list-solution',
   templateUrl: './interface-product-list-solution.component.html',
-  styleUrls: ['./interface-product-list-solution.component.scss']
+  styleUrls: ['./interface-product-list-solution.component.scss'],
 })
-export class InterfaceProductListSolutionComponent
-implements ProductsSolution {
+export class InterfaceProductListSolutionComponent implements ProductsSolution {
   products: Product[] = [];
 
-  constructor(private productService: ProductService) {
-  }
+  constructor(private productService: ProductService) {}
 
   ngOnInit() {
-   this.products = this.productService.getProducts();
+    this.products = this.productService.getProducts();
   }
 }

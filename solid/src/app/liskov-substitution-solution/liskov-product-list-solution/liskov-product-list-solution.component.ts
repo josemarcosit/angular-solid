@@ -4,14 +4,13 @@ import { ProductService } from 'src/app/single-responsibility-solution/product.s
 @Component({
   selector: 'app-liskov-product-list-solution',
   templateUrl: './liskov-product-list-solution.component.html',
-  styleUrls: ['./liskov-product-list-solution.component.scss']
+  styleUrls: ['./liskov-product-list-solution.component.scss'],
 })
 export class LiskovProductListSolutionComponent {
-  @Input() products:any = [];
+  @Input() products: any = [];
 
-  constructor(private productService: ProductService) {
-  }
+  constructor(private productService: ProductService) {}
   ngOnInit() {
-   this.products = this.productService.getProducts();
+    this.products = this.productService.getProducts();
   }
 }

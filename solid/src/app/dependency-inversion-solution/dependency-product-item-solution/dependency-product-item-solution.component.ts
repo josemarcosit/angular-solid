@@ -9,13 +9,18 @@ import { Logger } from '../interfaces/logger';
 @Component({
   selector: 'app-dependency-product-item-solution',
   templateUrl: './dependency-product-item-solution.component.html',
-  styleUrls: ['./dependency-product-item-solution.component.scss']
+  styleUrls: ['./dependency-product-item-solution.component.scss'],
 })
-export class DependencyProductItemSolutionComponent extends ItemBaseComponent
-implements ProductsSolution, DeletableSolution {
+export class DependencyProductItemSolutionComponent
+  extends ItemBaseComponent
+  implements ProductsSolution, DeletableSolution
+{
   override products: Product[] = [];
 
-  constructor(@Inject('Logger') public logger: Logger, private productService: ProductService) {
+  constructor(
+    @Inject('Logger') public logger: Logger,
+    private productService: ProductService
+  ) {
     super();
   }
 
@@ -28,6 +33,3 @@ implements ProductsSolution, DeletableSolution {
     this.logger.info('Product has been deleted.');
   }
 }
-
-
-

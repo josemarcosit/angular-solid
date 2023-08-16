@@ -4,18 +4,17 @@ import { ProductService } from 'src/app/single-responsibility-solution/product.s
 @Component({
   selector: 'app-open-close-solution',
   templateUrl: './open-close-solution.component.html',
-  styleUrls: ['./open-close-solution.component.scss']
+  styleUrls: ['./open-close-solution.component.scss'],
 })
-export class OpenCloseSolutionComponent implements OnInit{
-  products:any = [];
+export class OpenCloseSolutionComponent implements OnInit {
+  products: any = [];
 
-  constructor(private productService: ProductService) {
-  }
+  constructor(private productService: ProductService) {}
   ngOnInit() {
-   this.products = this.productService.getProducts();
+    this.products = this.productService.getProducts();
   }
 
-  onProductAdded(product:any){
+  onProductAdded(product: any) {
     this.productService.add(product);
   }
 }

@@ -2,8 +2,16 @@
 <div class="main">
   <h1>main</h1>
   <div class="container">
-    <div ><app-interface-product-item (itemDeleted)="onDeleted($event)"></app-interface-product-item></div>
-    <div ><app-interface-product-list (itemDeleted)="onDeleted($event)"></app-interface-product-list></div>
+    <div>
+      <app-interface-product-item
+        (itemDeleted)="onDeleted($event)"
+      ></app-interface-product-item>
+    </div>
+    <div>
+      <app-interface-product-list
+        (itemDeleted)="onDeleted($event)"
+      ></app-interface-product-list>
+    </div>
   </div>
 </div>
 <app-footer (productCreated)="onProductAdded($event)"></app-footer>

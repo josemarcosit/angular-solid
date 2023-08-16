@@ -4,13 +4,12 @@ import { ProductService } from 'src/app/single-responsibility-solution/product.s
 @Component({
   selector: 'app-full-app',
   templateUrl: './full-app.component.html',
-  styleUrls: ['./full-app.component.scss']
+  styleUrls: ['./full-app.component.scss'],
 })
 export class FullAppComponent {
-  constructor(private productService: ProductService) {
-  }
+  constructor(private productService: ProductService) {}
 
-  onProductAdded(product:any){
+  onProductAdded(product: any) {
     this.productService.add(product);
   }
 }
